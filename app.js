@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 
-    var api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
+    let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
     $.getJSON("api", function(citibike) {
         
