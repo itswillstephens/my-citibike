@@ -5,7 +5,7 @@ $(document).ready(function() {
     $.getJSON(api, function(citibike) {
         
         console.log(api);
-        let lastUpdated = citibike.data.stations[700].station_id;
+        let lastUpdated = citibike.data.stations[650].station_id;
             // let bike = citibike;
             // let stations = citibike;
                 
