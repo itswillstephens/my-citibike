@@ -4,11 +4,13 @@ $(document).ready(function() {
 
     $.getJSON(api, function(citibike) {
         
-        const now = new Date();
-        const nowUnix = now.getTime();
-        let citibikeLastUpdateTime = citibike.data.stations[641].last_reported;
-        let lastUpdated = nowUnix - citibikeLastUpdateTime;
-        console.log(citibikeLastUpdateTime);
+        let now = new Date();
+        let unixSeconds = now.getTime();
+        let citibikeSeconds = citibike.data.stations[641].last_reported;
+        let lastUpdated = unixSeconds - citibikeSeconds;
+        
+        console.log("Citibike: " + citibikeLastUpdateTime);
+        console.log("Unix: " + secondsUnix);
 
         let stationID = citibike.data.stations[641].station_id;
         let bikes = citibike.data.stations[641].num_bikes_available;
