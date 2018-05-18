@@ -7,6 +7,7 @@
 }
 
 html, body {
+    margin-top: 30px;
     height: 100%; 
     /* background: url(images/weather.jpg); */
     background-position: center;
@@ -16,4 +17,8 @@ html, body {
     color: #052b6c;
     font-weight: bold;
     font-family: "Overpass",sans-serif;
+}
+
+#bikes, #docks {
+    font-size: 3em;
 }
