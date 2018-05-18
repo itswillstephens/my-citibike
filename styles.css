@@ -7,21 +7,34 @@
 }
 
 html, body {
-    margin-top: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: "Overpass",sans-serif;
+    padding-top: 20px;
+    background: url(images/background.jpg);
     height: 100%; 
-    /* background: url(images/weather.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+}
 
-    color: #052b6c;
-    font-weight: bold;
-    font-family: "Overpass",sans-serif;
+#container {
+    width: 300px;
+    height: 300px;
+    border: 10px solid white;
+    padding: 20px;
+    border-radius: 3%;
+    margin: auto;
+    background-color: rgba(0,0,0,.5);
+    color: white;
 }
 
 #title {
-    font-size: 2em;
-    font-weight: normal;
+    color: white;
+    font-size: 1.5em;
+    font-weight: lighter;
+    line-height: 1;
 }
 
 #last-update {
