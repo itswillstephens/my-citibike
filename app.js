@@ -6,7 +6,7 @@ $(document).ready(function() {
         
         console.log(api);
         let lastUpdated = citibike.data.stations[640].last_reported;
-        let bike = citibike.data.stations[640].num_bikes_available;
+        let bikes = citibike.data.stations[640].num_bikes_available;
         let docks = citibike.data.stations[640].num_docks_available;
                 
             $("#last-updated").html(lastUpdated);
