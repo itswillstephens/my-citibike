@@ -4,12 +4,12 @@ $(document).ready(function() {
 
     $.getJSON(api, function(citibike) {
         
-        let stationID = citibike.data.stations[640].station_id;
-        let lastUpdated = citibike.data.stations[640].last_reported;
-        let bikes = citibike.data.stations[640].num_bikes_available;
-        let docks = citibike.data.stations[640].num_docks_available;
+        let stationID = citibike.data.stations[641].station_id;
+        let lastUpdated = citibike.data.stations[641].last_reported;
+        let bikes = citibike.data.stations[641].num_bikes_available;
+        let docks = citibike.data.stations[641].num_docks_available;
 
-            $("#station-id").html(stationID);
+            console.log(stationID);
             $("#last-updated").html(lastUpdated);
             $("#bikes").html(bikes);
             $("#docks").html(docks);
