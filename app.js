@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 
     let api;
-    $.getJSON("api", function(citibike) {
+    $.getJSON(api, function(citibike) {
         
         api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
         let lastUpdated = citibike.data.stations[10].station_id;
