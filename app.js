@@ -9,7 +9,7 @@ $(document).ready(function() {
             // let bike = citibike;
             // let stations = citibike;
                 
-            $("#last-updated").html(lastupdated);
+            $("#last-updated").html(lastUpdated);
             // $("#bikes").html(bikes);
             // $("#stations").html(stations);
     })    
