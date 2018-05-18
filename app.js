@@ -10,7 +10,7 @@ $(document).ready(function() {
         let lastUpdated = unixSeconds - citibikeSeconds;
         
         console.log("Citibike: " + citibikeSeconds);
-        console.log("Unix: " + unixSeconds);
+        console.log("Now: " + now);
 
         let stationID = citibike.data.stations[641].station_id;
         let bikes = citibike.data.stations[641].num_bikes_available;
