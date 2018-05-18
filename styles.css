@@ -19,6 +19,11 @@ html, body {
     font-family: "Overpass",sans-serif;
 }
 
+#title {
+    font-size: 2em;
+    font-weight: normal;
+}
+
 #last-update {
     font-size: .8em;
     color: red;
