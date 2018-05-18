@@ -7,7 +7,7 @@ $(document).ready(function() {
         const now = new Date();
         const nowUnix = now.getTime();
         let citibikeLastUpdateTime = citibike.data.stations[641].last_reported;
-        let lastUpdated = (nowUnix - citibikeLastUpdateTime) * 1000;
+        let lastUpdated = nowUnix - citibikeLastUpdateTime;
         console.log(nowUnix);
         console.log(citibikeLastUpdateTime);
 
