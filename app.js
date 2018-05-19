@@ -9,10 +9,6 @@ $(document).ready(function() {
         let lastReportedHour = lastReportedDate.getHours();
         let lastReportedMinutes = lastReportedDate.getMinutes();
         let lastReportedSec = lastReportedDate.getSeconds();
-        
-        console.log("Citibike: " + citibikeSeconds);
-        console.log("Now: " + now);
-
         let stationID = citibike.data.stations[641].station_id;
         let bikes = citibike.data.stations[641].num_bikes_available;
         let docks = citibike.data.stations[641].num_docks_available;
