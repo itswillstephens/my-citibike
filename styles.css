@@ -5,11 +5,11 @@
     padding: 0;
     overflow: hidden;
     color: white;
+    font-family: "Overpass", sans-serif;
 }
 
 html, body {
     font-weight: bold;
-    font-family: "Overpass", sans-serif;
     background: url(images/background.jpg);
     height: 100%;
     background-position: center;
@@ -25,6 +25,7 @@ html, body {
     border-radius: 3%;
     margin: 30px auto;
     background-color: rgba(0,0,0,.5);
+    line-height: 1;
 }
 
 #title {
