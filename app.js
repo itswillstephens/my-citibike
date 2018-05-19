@@ -19,6 +19,14 @@ $(document).ready(function() {
             $("#last-updated").html(lastUpdated + " seconds ago");
             $("#bikes").html(bikes + " bikes");
             $("#docks").html(docks + " docks");
+        
+        if(bikes < 4) {
+            $("#bikes").css("color", "red");
+        } else if(bikes < 7) {
+            $("#bikes").css("color", "orange");
+        } else {
+            $("#bikes").css("color", "green");
+        }
     })    
 
 });
