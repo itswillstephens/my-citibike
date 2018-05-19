@@ -21,7 +21,7 @@ html, body {
     width: 80%;
     height: auto;
     border: 10px solid white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 3%;
     margin: 30px auto;
     background-color: rgba(0,0,0,.5);
@@ -32,10 +32,11 @@ html, body {
     font-weight: lighter;
 }
 
-#last-update {
-    font-size: .8em;
-}
-
 #bikes, #docks {
     font-size: 3em;
+}
+
+#last-update {
+    font-size: 1em;
+    font-weight: lighter;
 }
