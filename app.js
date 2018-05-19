@@ -5,10 +5,10 @@ $(document).ready(function() {
     $.getJSON(api, function(citibike) {
         
         let lastReportedUnix = citibike.data.stations[641].last_reported;
-        let lastReportedDate = new Date(lastReported * 1000);
-        let lasReportedHour = lastReportedDate.getHours();
-        let lasReportedMinutes = lastReportedDate.getMinutes();
-        let lasReportedSec = lastReportedDate.getSeconds();
+        let lastReportedDate = new Date(lastReportedUnix * 1000);
+        let lastReportedHour = lastReportedDate.getHours();
+        let lastReportedMinutes = lastReportedDate.getMinutes();
+        let lastReportedSec = lastReportedDate.getSeconds();
         
         console.log("Citibike: " + citibikeSeconds);
         console.log("Now: " + now);
@@ -17,7 +17,7 @@ $(document).ready(function() {
         let bikes = citibike.data.stations[641].num_bikes_available;
         let docks = citibike.data.stations[641].num_docks_available;
 
-        $("#last-updated").html(`${lasReportedHour}:${lasReportedMinutes}:${lasReportedSec}`);
+        $("#last-updated").html(`${lastReportedHour}:${lastReportedMinutes}:${lastReportedSec}`);
         $("#bikes").html(bikes + " bikes");
         $("#docks").html(docks + " docks");
         
