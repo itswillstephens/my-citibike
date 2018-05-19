@@ -4,10 +4,11 @@ $(document).ready(function() {
 
     $.getJSON(api, function(citibike) {
         
-        let now = new Date();
-        let unixSeconds = now.getTime();
-        let citibikeSeconds = citibike.data.stations[641].last_reported;
-        let lastUpdated = unixSeconds - citibikeSeconds;
+        let lastReportedUnix = citibike.data.stations[641].last_reported;
+        let lastReportedDate = new Date(lastReported * 1000);
+        let lasReportedHour = lastReportedDate.getHours();
+        let lasReportedMinutes = lastReportedDate.getMinutes();
+        let lasReportedSec = lastReportedDate.getSeconds();
         
         console.log("Citibike: " + citibikeSeconds);
         console.log("Now: " + now);
@@ -16,17 +17,22 @@ $(document).ready(function() {
         let bikes = citibike.data.stations[641].num_bikes_available;
         let docks = citibike.data.stations[641].num_docks_available;
 
-            $("#last-updated").html(lastUpdated + " seconds ago");
-            $("#bikes").html(bikes + " bikes");
-            $("#docks").html(docks + " docks");
+        $("#last-updated").html(`${lasReportedHour}:${lasReportedMinutes}:${lasReportedSec}`);
+        $("#bikes").html(bikes + " bikes");
+        $("#docks").html(docks + " docks");
         
+        //Color codes when numbers are low
         if(bikes < 4) {
             $("#bikes").css("color", "red");
         } else if(bikes < 7) {
             $("#bikes").css("color", "orange");
-        } else {
-            $("#bikes").css("color", "green");
         }
+
+        if(docks < 4) {
+            $("#bikes").css("color", "red");
+        } else if(docks < 7) {
+            $("#bikes").css("color", "orange");
+        } 
     })    
 
 });

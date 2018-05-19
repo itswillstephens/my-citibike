@@ -7,9 +7,8 @@
 }
 
 html, body {
-    color: white;
     font-weight: bold;
-    font-family: "Overpass",sans-serif;
+    font-family: "Overpass", sans-serif;
     background: url(images/background.jpg);
     height: 100%;
     background-position: center;
@@ -26,7 +25,6 @@ html, body {
     border-radius: 3%;
     margin: 30px auto;
     background-color: rgba(0,0,0,.5);
-    color: white;
 }
 
 #title {
@@ -37,7 +35,6 @@ html, body {
 
 #last-update {
     font-size: .8em;
-    color: red;
 }
 
 #bikes, #docks {
