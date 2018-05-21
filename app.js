@@ -31,7 +31,7 @@ $(document).ready(function() {
 
         //3486-schermer 3419
         //BREWERY - station id: 
-        let breweryID = citibike.data.stations[600].station_id;
+        let breweryID = citibike.data.stations[598].station_id;
         let lastReportedUnixBrewery = citibike.data.stations[641].last_reported;
         let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
         let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
