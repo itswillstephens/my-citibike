@@ -43,3 +43,8 @@ html, body {
     font-family: 'Roboto', sans-serif;
     margin-top: 15px;
 }
+
+#timeNow {
+    color: white;
+    font-size: 0.8em;
+}
