@@ -17,7 +17,7 @@ html, body {
     background-size: cover;
 }
 
-#container {
+#home-container, #brewery-container {
     width: 80%;
     height: auto;
     border: 10px solid white;
@@ -28,16 +28,16 @@ html, body {
     line-height: 1;
 }
 
-#title {
+#title-home, #title-brewery {
     font-size: 3em;
     font-weight: lighter;
 }
 
-#bikes-home, #docks-home,  {
+#bikes-home, #docks-home, #bikes-brewery, #docks-brewery  {
     font-size: 3em;
 }
 
-#last-update-home {
+#last-update-home, #last-update-brewery {
     font-size: 1em;
     font-weight: lighter;
 }

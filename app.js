@@ -28,6 +28,52 @@ $(document).ready(function() {
         } else if(docksHome < 7) {
             $("#docks-home").css("color", "orange");
         } 
+
+        //3486-schermer 3419
+        //BREWERY - station id: 
+        let breweryID = citibike.data.stations[600].station_id;
+        let lastReportedUnixBrewery = citibike.data.stations[641].last_reported;
+        let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
+        let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
+        let lastReportedMinutesBrewery = lastReportedDateBrewery.getMinutes();
+        let lastReportedSecBrewery = lastReportedDateBrewery.getSeconds();
+        let bikesBrewery = citibike.data.stations[641].num_bikes_available;
+        let docksBrewery = citibike.data.stations[641].num_docks_available;
+
+        console.log(breweryID);
+
+        //Grab
+        $("#last-updated-brewery").html(`Last reported: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery}`);
+        $("#bikes-brewery").html(bikesBrewery + " bikes");
+        $("#docks-brewery").html(docksBrewery + " docks");
+        
+        //Warning colors
+        if(bikesBrewery < 4) {
+            $("#bikes-brewery").css("color", "red");
+        } else if(bikesBrewery < 7) {
+            $("#bikes-brewery").css("color", "orange");
+        }
+        if(docksBrewery < 4) {
+            $("#docks-brewery").css("color", "red");
+        } else if(docksBrewery < 7) {
+            $("#docks-brewery").css("color", "orange");
+        } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     })    
 
 });
