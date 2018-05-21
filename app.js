@@ -3,7 +3,10 @@ $(document).ready(function() {
     let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
     $.getJSON(api, function(citibike) {
-        //------------HOME - station id: 641
+        let timeNow = Date.now();
+        $("#timeNow").html(timeNow);
+        
+        //------------HOME
 
         //Time
         let lastReportedUnixHome = citibike.data.stations[641].last_reported;
@@ -31,9 +34,9 @@ $(document).ready(function() {
 
         
         if(lastReportedHourHomeMilitaryTime >= 12 && lastReportedHourHomeMilitaryTime < 24) {
-            $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} PM`);
+            $("#last-updated-home").html(`Last bike change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} PM`);
         } else if(lastReportedHourHomeMilitaryTime < 12 || lastReportedHourHomeMilitaryTime === 24) {
-            $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} AM`);
+            $("#last-updated-home").html(`Last bike change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} AM`);
         }
     
         $("#bikes-home").html(bikesHome + " bikes");
@@ -76,9 +79,9 @@ $(document).ready(function() {
         let docksBrewery = citibike.data.stations[598].num_docks_available;
 
         if(lastReportedHourBreweryMilitaryTime >= 12 && lastReportedHourBreweryMilitaryTime < 24) {
-            $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} PM`);
+            $("#last-updated-brewery").html(`Last bike change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} PM`);
         } else if(lastReportedHourBreweryMilitaryTime < 12 || lastReportedHourBreweryMilitaryTime === 24) {
-            $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} AM`);
+            $("#last-updated-brewery").html(`Last bike change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} AM`);
         }
 
         //Grab
