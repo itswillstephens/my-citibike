@@ -4,11 +4,27 @@ $(document).ready(function() {
 
     $.getJSON(api, function(citibike) {
         //HOME - station id: 641
+
+        //Time
         let lastReportedUnixHome = citibike.data.stations[641].last_reported;
         let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
         let lastReportedHourHome = lastReportedDateHome.getHours();
         let lastReportedMinutesHome = lastReportedDateHome.getMinutes();
         let lastReportedSecHome = lastReportedDateHome.getSeconds();
+
+        //Use non military time
+        if(lastReportedHourHome > 12) {
+            lastReportedHourHome = lastReportedHourHome - 12;
+        }
+
+        if(lastReportedMinutesHome < 10) {
+            lastReportedMinutesHome = "0" + lastReportedMinutesHome.toString();
+        }
+        if(lastReportedSecHome < 10) {
+            lastReportedSecHome = "0" + lastReportedMinutesHome.toString();
+        }
+
+
         let bikesHome = citibike.data.stations[641].num_bikes_available;
         let docksHome = citibike.data.stations[641].num_docks_available;
 
@@ -58,21 +74,6 @@ $(document).ready(function() {
         } else if(docksBrewery < 7) {
             $("#docks-brewery").css("color", "orange");
         } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     })    
 
