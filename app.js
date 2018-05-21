@@ -3,31 +3,30 @@ $(document).ready(function() {
     let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
     $.getJSON(api, function(citibike) {
-        
-        let lastReportedUnix = citibike.data.stations[641].last_reported;
-        let lastReportedDate = new Date(lastReportedUnix * 1000);
-        let lastReportedHour = lastReportedDate.getHours();
-        let lastReportedMinutes = lastReportedDate.getMinutes();
-        let lastReportedSec = lastReportedDate.getSeconds();
-        let stationID = citibike.data.stations[641].station_id;
-        let bikes = citibike.data.stations[641].num_bikes_available;
-        let docks = citibike.data.stations[641].num_docks_available;
+        //HOME - station id: 641
+        let lastReportedUnixHome = citibike.data.stations[641].last_reported;
+        let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
+        let lastReportedHourHome = lastReportedDateHome.getHours();
+        let lastReportedMinutesHome = lastReportedDateHome.getMinutes();
+        let lastReportedSecHome = lastReportedDateHome.getSeconds();
+        let bikesHome = citibike.data.stations[641].num_bikes_available;
+        let docksHome = citibike.data.stations[641].num_docks_available;
 
-        $("#last-updated").html(`Last reported: ${lastReportedHour}:${lastReportedMinutes}:${lastReportedSec}`);
-        $("#bikes").html(bikes + " bikes");
-        $("#docks").html(docks + " docks");
+        //Grab
+        $("#last-updated-home").html(`Last reported: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome}`);
+        $("#bikes-home").html(bikesHome + " bikes");
+        $("#docks-home").html(docksHome + " docks");
         
-        //Color codes when numbers are low
-        if(bikes < 4) {
-            $("#bikes").css("color", "red");
-        } else if(bikes < 7) {
-            $("#bikes").css("color", "orange");
+        //Warning colors
+        if(bikesHome < 4) {
+            $("#bikes-home").css("color", "red");
+        } else if(bikesHome < 7) {
+            $("#bikes-home").css("color", "orange");
         }
-
-        if(docks < 4) {
-            $("#docks").css("color", "red");
-        } else if(docks < 7) {
-            $("#docks").css("color", "orange");
+        if(docksHome < 4) {
+            $("#docks-home").css("color", "red");
+        } else if(docksHome < 7) {
+            $("#docks-home").css("color", "orange");
         } 
     })    
 
