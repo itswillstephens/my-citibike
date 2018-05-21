@@ -3,8 +3,6 @@ $(document).ready(function() {
     let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
     $.getJSON(api, function(citibike) {
-        let timeNow = Date.now();
-        $("#timeNow").html(timeNow);
         
         //------------HOME
 
