@@ -33,11 +33,11 @@ html, body {
     font-weight: lighter;
 }
 
-#bikes, #docks {
+#bikes-home, #docks-home,  {
     font-size: 3em;
 }
 
-#last-update {
+#last-update-home {
     font-size: 1em;
     font-weight: lighter;
 }
