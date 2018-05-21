@@ -13,7 +13,7 @@ $(document).ready(function() {
         let bikes = citibike.data.stations[641].num_bikes_available;
         let docks = citibike.data.stations[641].num_docks_available;
 
-        $("#last-updated").html(`Last update: ${lastReportedHour}:${lastReportedMinutes}:${lastReportedSec}`);
+        $("#last-updated").html(`Last reported: ${lastReportedHour}:${lastReportedMinutes}:${lastReportedSec}`);
         $("#bikes").html(bikes + " bikes");
         $("#docks").html(docks + " docks");
         
