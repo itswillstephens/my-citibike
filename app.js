@@ -82,7 +82,7 @@ $(document).ready(function() {
         }
 
         //Grab
-        $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery}`);
+        
         $("#bikes-brewery").html(bikesBrewery + " bikes");
         $("#docks-brewery").html(docksBrewery + " docks");
         
