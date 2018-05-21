@@ -25,9 +25,9 @@ $(document).ready(function() {
         }
 
         if(docks < 4) {
-            $("#bikes").css("color", "red");
+            $("#docks").css("color", "red");
         } else if(docks < 7) {
-            $("#bikes").css("color", "orange");
+            $("#docks").css("color", "orange");
         } 
     })    
 
