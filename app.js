@@ -9,6 +9,7 @@ $(document).ready(function() {
         let lastReportedUnixHome = citibike.data.stations[641].last_reported;
         let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
         let lastReportedHourHome = lastReportedDateHome.getHours();
+        let lastReportedHourHomeMilitaryTime = lastReportedDateHome.getHours();
         let lastReportedMinutesHome = lastReportedDateHome.getMinutes();
         let lastReportedSecHome = lastReportedDateHome.getSeconds();
 
@@ -29,7 +30,13 @@ $(document).ready(function() {
         let docksHome = citibike.data.stations[641].num_docks_available;
 
         //Grab
-        $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome}`);
+        
+        if(lastReportedHourHomeMilitaryTime >= 12 || lastReportedHourHomeMilitaryTime < 24) {
+            $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} PM`);
+        } else if(lastReportedHourHomeMilitaryTime < 12 || lastReportedHourHomeMilitaryTime === 24) {
+            $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} AM`);
+        }
+    
         $("#bikes-home").html(bikesHome + " bikes");
         $("#docks-home").html(docksHome + " docks");
         

@@ -38,6 +38,6 @@ html, body {
 }
 
 #last-update-home, #last-update-brewery {
-    font-size: 1em;
-    font-weight: lighter;
+    font-size: .8em;
+    font-weight: 100;
 }
