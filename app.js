@@ -30,7 +30,7 @@ $(document).ready(function() {
         let docksHome = citibike.data.stations[641].num_docks_available;
 
         
-        if(lastReportedHourHomeMilitaryTime >= 12 || lastReportedHourHomeMilitaryTime < 24) {
+        if(lastReportedHourHomeMilitaryTime >= 12 && lastReportedHourHomeMilitaryTime < 24) {
             $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} PM`);
         } else if(lastReportedHourHomeMilitaryTime < 12 || lastReportedHourHomeMilitaryTime === 24) {
             $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} AM`);
@@ -75,7 +75,7 @@ $(document).ready(function() {
         let bikesBrewery = citibike.data.stations[598].num_bikes_available;
         let docksBrewery = citibike.data.stations[598].num_docks_available;
 
-        if(lastReportedHourBreweryMilitaryTime >= 12 && lastReportedHourBreweryMilitaryTime !== 24) {
+        if(lastReportedHourBreweryMilitaryTime >= 12 && lastReportedHourBreweryMilitaryTime < 24) {
             $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} PM`);
         } else if(lastReportedHourBreweryMilitaryTime < 12 || lastReportedHourBreweryMilitaryTime === 24) {
             $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} AM`);
