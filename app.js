@@ -29,7 +29,6 @@ $(document).ready(function() {
         let bikesHome = citibike.data.stations[641].num_bikes_available;
         let docksHome = citibike.data.stations[641].num_docks_available;
 
-        //Grab
         
         if(lastReportedHourHomeMilitaryTime >= 12 || lastReportedHourHomeMilitaryTime < 24) {
             $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} PM`);
@@ -58,6 +57,7 @@ $(document).ready(function() {
         let lastReportedUnixBrewery = citibike.data.stations[598].last_reported;
         let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
         let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
+        let lastReportedHourBreweryMilitaryTime = lastReportedDateHome.getHours();
         let lastReportedMinutesBrewery = lastReportedDateBrewery.getMinutes();
         let lastReportedSecBrewery = lastReportedDateBrewery.getSeconds();
 
@@ -76,7 +76,11 @@ $(document).ready(function() {
         let bikesBrewery = citibike.data.stations[598].num_bikes_available;
         let docksBrewery = citibike.data.stations[598].num_docks_available;
 
-        console.log(breweryID);
+        if(lastReportedHourBreweryMilitaryTime >= 12 || lastReportedHourBreweryMilitaryTime < 24) {
+            $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} PM`);
+        } else if(lastReportedHourBreweryMilitaryTime < 12 || lastReportedHourBreweryMilitaryTime === 24) {
+            $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} AM`);
+        }
 
         //Grab
         $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery}`);
