@@ -3,7 +3,7 @@ $(document).ready(function() {
     let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
     $.getJSON(api, function(citibike) {
-        //HOME - station id: 641
+        //------------HOME - station id: 641
 
         //Time
         let lastReportedUnixHome = citibike.data.stations[641].last_reported;
@@ -50,14 +50,13 @@ $(document).ready(function() {
         } else if(docksHome < 7) {
             $("#docks-home").css("color", "orange");
         } 
+        //----------------BREWERY station id: 598
 
-        //3486-schermer 3419
-        //BREWERY - station id: 
         let breweryID = citibike.data.stations[598].station_id;
         let lastReportedUnixBrewery = citibike.data.stations[598].last_reported;
         let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
         let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
-        let lastReportedHourBreweryMilitaryTime = lastReportedDateHome.getHours();
+        let lastReportedHourBreweryMilitaryTime = lastReportedDateBrewery.getHours();
         let lastReportedMinutesBrewery = lastReportedDateBrewery.getMinutes();
         let lastReportedSecBrewery = lastReportedDateBrewery.getSeconds();
 
