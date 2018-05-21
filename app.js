@@ -13,7 +13,7 @@ $(document).ready(function() {
         let docksHome = citibike.data.stations[641].num_docks_available;
 
         //Grab
-        $("#last-updated-home").html(`Last reported: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome}`);
+        $("#last-updated-home").html(`Last change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome}`);
         $("#bikes-home").html(bikesHome + " bikes");
         $("#docks-home").html(docksHome + " docks");
         
@@ -43,7 +43,7 @@ $(document).ready(function() {
         console.log(breweryID);
 
         //Grab
-        $("#last-updated-brewery").html(`Last reported: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery}`);
+        $("#last-updated-brewery").html(`Last change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery}`);
         $("#bikes-brewery").html(bikesBrewery + " bikes");
         $("#docks-brewery").html(docksBrewery + " docks");
         
