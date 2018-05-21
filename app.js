@@ -53,6 +53,19 @@ $(document).ready(function() {
         let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
         let lastReportedMinutesBrewery = lastReportedDateBrewery.getMinutes();
         let lastReportedSecBrewery = lastReportedDateBrewery.getSeconds();
+
+        //Use non military time
+        if(lastReportedHourBrewery > 12) {
+            lastReportedHourBrewery = lastReportedHourBrewery - 12;
+        }
+
+        if(lastReportedMinutesBrewery < 10) {
+            lastReportedMinutesBrewery = "0" + lastReportedMinutesBrewery.toString();
+        }
+        if(lastReportedSecBrewery < 10) {
+            lastReportedSecBrewery = "0" + lastReportedSecBrewery.toString();
+        }
+
         let bikesBrewery = citibike.data.stations[598].num_bikes_available;
         let docksBrewery = citibike.data.stations[598].num_docks_available;
 
