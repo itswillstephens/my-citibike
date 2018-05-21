@@ -21,7 +21,7 @@ html, body {
 #home-container, #brewery-container {
     width: 80%;
     height: auto;
-    border: 10px solid white;
+    border: 5px solid white;
     padding: 10px;
     border-radius: 3%;
     margin: 30px auto;
@@ -40,6 +40,5 @@ html, body {
 
 #last-update-home, #last-update-brewery {
     font-size: .8em;
-    font-weight: 100;
     font-family: 'Roboto', sans-serif;
 }
