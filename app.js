@@ -5,12 +5,9 @@ $(document).ready(function() {
     $.getJSON(api, function(citibike) {
         
         //------------HOME
-
-        let homeID = citibike.data.stations[641].station_id;
-        console.log(homeID);
         
         //Time
-        let lastReportedUnixHome = citibike.data.stations[641].last_reported;
+        let lastReportedUnixHome = citibike.data.stations[639].last_reported;
         let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
         let lastReportedHourHome = lastReportedDateHome.getHours();
         let lastReportedHourHomeMilitaryTime = lastReportedDateHome.getHours();
@@ -30,8 +27,8 @@ $(document).ready(function() {
         }
 
 
-        let bikesHome = citibike.data.stations[641].num_bikes_available;
-        let docksHome = citibike.data.stations[641].num_docks_available;
+        let bikesHome = citibike.data.stations[639].num_bikes_available;
+        let docksHome = citibike.data.stations[639].num_docks_available;
 
         
         if(lastReportedHourHomeMilitaryTime >= 12 && lastReportedHourHomeMilitaryTime < 24) {
