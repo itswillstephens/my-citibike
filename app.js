@@ -53,7 +53,10 @@ $(document).ready(function() {
         } 
         //----------------BREWERY station id: 598
 
+        
+
         let breweryID = citibike.data.stations[598].station_id;
+        console.log(breweryID)
         let lastReportedUnixBrewery = citibike.data.stations[598].last_reported;
         let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
         let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
