@@ -6,6 +6,9 @@ $(document).ready(function() {
         
         //------------HOME
 
+        let homeID = citibike.data.stations[641].station_id;
+        console.log(homeID);
+        
         //Time
         let lastReportedUnixHome = citibike.data.stations[641].last_reported;
         let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
