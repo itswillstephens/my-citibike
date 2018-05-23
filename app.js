@@ -102,7 +102,7 @@ $(document).ready(function() {
         } 
 
 
-        $("#last-checked-time").html(`As of ${humanTimeNow}`);
+        $("#last-checked-time").html(`as of ${humanTimeNow}`);
 
 
         setTimeout(getData, 10000);
