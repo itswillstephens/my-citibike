@@ -11,22 +11,17 @@
 
 html, body {
     font-weight: bold;
-    background: url(images/background.jpg);
     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #0098e4;
 }
 
 #home-container, #brewery-container {
     width: 80%;
     max-width: 400px;
     height: auto;
-    border: 5px solid white;
     padding: 10px;
-    border-radius: 3%;
     margin: 30px auto;
-    background-color: rgba(0,0,0,.5);
+    background-color: #052b6c;
     line-height: 1;
 }
 
