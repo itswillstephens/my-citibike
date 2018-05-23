@@ -9,9 +9,8 @@ $(document).ready(function() {
         
         //-----------Current Time
 
-        let nowDate = new Date();
-        let time = nowDate.getHours() + ":" + nowDate.getMinutes() + ":" + nowDate.getSeconds(); 
-        console.log(time);
+        moment().fromNow();
+
 
 
         //------------HOME
@@ -61,7 +60,6 @@ $(document).ready(function() {
         //----------------BREWERY 
 
         let breweryID = citibike.data.stations[597].station_id;
-        console.log(breweryID)
         let lastReportedUnixBrewery = citibike.data.stations[597].last_reported;
         let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
         let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
