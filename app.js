@@ -7,6 +7,13 @@ $(document).ready(function() {
 
     $.getJSON(api, function(citibike) {
         
+        //-----------Current Time
+
+        let nowDate = new Date();
+        let time = nowDate.getHours() + ":" + nowDate.getMinutes() + ":" + nowDate.getSeconds(); 
+        console.log(time);
+
+
         //------------HOME
         
         let lastReportedUnixHome = citibike.data.stations[639].last_reported;
