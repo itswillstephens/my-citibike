@@ -10,8 +10,8 @@ $(document).ready(function() {
         //-----------Current Time
 
         let date = new Date();
-
-        console.log(date)
+        let humanTimeNow = date.toLocaleTimeString()
+        console.log(humanTimeNow)
 
 
         //------------HOME
