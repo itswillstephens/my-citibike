@@ -37,14 +37,14 @@ html, body {
     background-color: #052b6c;
 }
 
-#last-updated-home, #last-updated-brewery, #last-checked-time {
+#last-updated-home, #last-updated-brewery {
     font-size: .8em;
     font-family: 'Roboto', sans-serif;
     margin-top: 15px;
     background-color: #052b6c;
 }
 
-#timeNow {
+#last-checked-time {
     color: white;
     font-size: 1em;
     background-color: #0098e4;

@@ -105,7 +105,7 @@ $(document).ready(function() {
         $("#last-checked-time").html(`as of ${humanTimeNow}`);
 
 
-        setTimeout(getData, 15000);
+        setTimeout(getData, 30000);
     })    
  }
  getData(); 
