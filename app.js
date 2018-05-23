@@ -99,4 +99,5 @@ $(document).ready(function() {
         setTimeout(getData, 60000);
     })    
  }
+ getData(); 
 });
