@@ -13,6 +13,7 @@
 html, body {
     font-weight: bold;
     background-color: #0098e4;
+    text-align: center;
 }
 
 #home-container, #brewery-container {
