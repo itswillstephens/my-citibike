@@ -29,7 +29,7 @@ $(document).ready(function() {
             lastReportedMinutesHome = "0" + lastReportedMinutesHome.toString();
         }
         if(lastReportedSecHome < 10) {
-            lastReportedSecHome = "0" + lastReportedMinutesHome.toString();
+            lastReportedSecHome = "0" + lastReportedSecHome.toString();
         }
 
         let bikesHome = citibike.data.stations[639].num_bikes_available;
