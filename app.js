@@ -1,12 +1,14 @@
 $(document).ready(function() { 
 
+ function getData() {
+
+
     let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
     $.getJSON(api, function(citibike) {
         
         //------------HOME
         
-        //Time
         let lastReportedUnixHome = citibike.data.stations[639].last_reported;
         let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
         let lastReportedHourHome = lastReportedDateHome.getHours();
@@ -14,7 +16,6 @@ $(document).ready(function() {
         let lastReportedMinutesHome = lastReportedDateHome.getMinutes();
         let lastReportedSecHome = lastReportedDateHome.getSeconds();
 
-        //Use non military time
         if(lastReportedHourHome > 12) {
             lastReportedHourHome = lastReportedHourHome - 12;
         }
@@ -25,7 +26,6 @@ $(document).ready(function() {
         if(lastReportedSecHome < 10) {
             lastReportedSecHome = "0" + lastReportedMinutesHome.toString();
         }
-
 
         let bikesHome = citibike.data.stations[639].num_bikes_available;
         let docksHome = citibike.data.stations[639].num_docks_available;
@@ -51,9 +51,7 @@ $(document).ready(function() {
         } else if(docksHome < 7) {
             $("#docks-home").css("color", "orange");
         } 
-        //----------------BREWERY station id: 598
-
-        
+        //----------------BREWERY 
 
         let breweryID = citibike.data.stations[597].station_id;
         console.log(breweryID)
@@ -64,7 +62,6 @@ $(document).ready(function() {
         let lastReportedMinutesBrewery = lastReportedDateBrewery.getMinutes();
         let lastReportedSecBrewery = lastReportedDateBrewery.getSeconds();
 
-        //Use non military time
         if(lastReportedHourBrewery > 12) {
             lastReportedHourBrewery = lastReportedHourBrewery - 12;
         }
@@ -84,8 +81,6 @@ $(document).ready(function() {
         } else if(lastReportedHourBreweryMilitaryTime < 12 || lastReportedHourBreweryMilitaryTime === 24) {
             $("#last-updated-brewery").html(`Last bike change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} AM`);
         }
-
-        //Grab
         
         $("#bikes-brewery").html(bikesBrewery + " bikes");
         $("#docks-brewery").html(docksBrewery + " docks");
@@ -101,7 +96,7 @@ $(document).ready(function() {
         } else if(docksBrewery < 7) {
             $("#docks-brewery").css("color", "orange");
         } 
-
+        setTimeout(getData, 60000);
     })    
-
+ }
 });
