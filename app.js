@@ -10,9 +10,7 @@ $(document).ready(function() {
         //-----------Current Time
 
         let date = new Date();
-        let humanTimeNow = date.toLocaleTimeString()
-        console.log(humanTimeNow)
-
+        let humanTimeNow = date.toLocaleTimeString();
 
         //------------HOME
         
@@ -102,6 +100,11 @@ $(document).ready(function() {
         } else if(docksBrewery < 7) {
             $("#docks-brewery").css("color", "orange");
         } 
+
+
+        $("#last-checked-time").html(`As of ${humanTimeNow}`);
+
+
         setTimeout(getData, 10000);
     })    
  }

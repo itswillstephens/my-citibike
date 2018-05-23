@@ -39,7 +39,7 @@ html, body {
     font-size: 3em;
 }
 
-#last-updated-home, #last-updated-brewery {
+#last-updated-home, #last-updated-brewery, #last-checked-time {
     font-size: .8em;
     font-family: 'Roboto', sans-serif;
     margin-top: 15px;
