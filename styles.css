@@ -7,12 +7,12 @@
     overflow: hidden;
     color: white;
     font-family: "Overpass", sans-serif;
+    background-color: #0098e4;
 }
 
 html, body {
     font-weight: bold;
     height: 100%;
-    background-color: #0098e4;
 }
 
 #home-container, #brewery-container {
