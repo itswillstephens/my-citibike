@@ -96,7 +96,7 @@ $(document).ready(function() {
         } else if(docksBrewery < 7) {
             $("#docks-brewery").css("color", "orange");
         } 
-        setTimeout(getData, 60000);
+        setTimeout(getData, 10000);
     })    
  }
  getData(); 
