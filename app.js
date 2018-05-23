@@ -9,7 +9,7 @@ $(document).ready(function() {
         
         //-----------Current Time
 
-        moment().fromNow();
+        
 
 
 
