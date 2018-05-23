@@ -50,3 +50,7 @@ html, body {
     font-size: 1.2em;
     background-color: #0098e4;
 }
+
+#stopwatch {
+    font-size: 3em;
+}

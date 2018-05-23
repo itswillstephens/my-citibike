@@ -102,7 +102,7 @@ $(document).ready(function() {
         } 
 
 
-        $("#last-checked-time").html(`⏱️ last update: ${humanTimeNow}`);
+        $("#last-checked-time").html(` last update: ${humanTimeNow}`);
 
 
         setTimeout(getData, 30000);
