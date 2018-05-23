@@ -9,7 +9,9 @@ $(document).ready(function() {
         
         //-----------Current Time
 
-        
+        let date = new Date();
+        let humanTime = moment(date).fromNow();
+        console.log(humanTime);
 
 
 
