@@ -59,8 +59,8 @@ $(document).ready(function() {
         } 
         //----------------BREWERY 
 
-        let breweryID = citibike.data.stations[597].station_id;
-        let lastReportedUnixBrewery = citibike.data.stations[597].last_reported;
+        let breweryID = citibike.data.stations[596].station_id;
+        let lastReportedUnixBrewery = citibike.data.stations[596].last_reported;
         let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
         let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
         let lastReportedHourBreweryMilitaryTime = lastReportedDateBrewery.getHours();
@@ -78,8 +78,8 @@ $(document).ready(function() {
             lastReportedSecBrewery = "0" + lastReportedSecBrewery.toString();
         }
 
-        let bikesBrewery = citibike.data.stations[597].num_bikes_available;
-        let docksBrewery = citibike.data.stations[597].num_docks_available;
+        let bikesBrewery = citibike.data.stations[596].num_bikes_available;
+        let docksBrewery = citibike.data.stations[596].num_docks_available;
 
         if(lastReportedHourBreweryMilitaryTime >= 12 && lastReportedHourBreweryMilitaryTime < 24) {
             $("#last-updated-brewery").html(`Last bike change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} PM`);
