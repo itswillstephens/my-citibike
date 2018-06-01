@@ -13,9 +13,8 @@ $(document).ready(function() {
         let humanTimeNow = date.toLocaleTimeString();
 
         //------------HOME
-        console.log(citibike.data.stations[639].station_id)
         
-        let lastReportedUnixHome = citibike.data.stations[639].last_reported;
+        let lastReportedUnixHome = citibike.data.stations[638].last_reported;
         let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
         let lastReportedHourHome = lastReportedDateHome.getHours();
         let lastReportedHourHomeMilitaryTime = lastReportedDateHome.getHours();
@@ -33,8 +32,8 @@ $(document).ready(function() {
             lastReportedSecHome = "0" + lastReportedSecHome.toString();
         }
 
-        let bikesHome = citibike.data.stations[639].num_bikes_available;
-        let docksHome = citibike.data.stations[639].num_docks_available;
+        let bikesHome = citibike.data.stations[638].num_bikes_available;
+        let docksHome = citibike.data.stations[638].num_docks_available;
 
         
         if(lastReportedHourHomeMilitaryTime >= 12 && lastReportedHourHomeMilitaryTime < 24) {
