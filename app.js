@@ -3,7 +3,7 @@ $(document).ready(function() {
     function getData() {
 
         const homeID = 638;
-        const breweryID = 596;
+        const breweryID = 597;
    
        let apiStationStatus = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
