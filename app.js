@@ -13,6 +13,9 @@ $(document).ready(function() {
            let bikesHome = citibike.data.stations[homeID].num_bikes_available;
            let docksHome = citibike.data.stations[homeID].num_docks_available;
            
+            console.log(citibike.data.stations[homeID])
+
+
             if(citibike.data.stations[homeID].station_id !== "3486") {
                 $("#bikes-home").html("error");
             } else {
