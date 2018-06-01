@@ -13,6 +13,7 @@ $(document).ready(function() {
         let humanTimeNow = date.toLocaleTimeString();
 
         //------------HOME
+        console.log(citibike.data.stations[639].station_id)
         
         let lastReportedUnixHome = citibike.data.stations[639].last_reported;
         let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
