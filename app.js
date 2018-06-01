@@ -3,7 +3,7 @@ $(document).ready(function() {
     function getData() {
 
         const homeID = 638;
-        const breweryID = 597;
+        const breweryID = 596;
    
        let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
@@ -13,8 +13,8 @@ $(document).ready(function() {
            let bikesHome = citibike.data.stations[homeID].num_bikes_available;
            let docksHome = citibike.data.stations[homeID].num_docks_available;
            
-            console.log(citibike.data.stations[homeID])
-            console.log(citibike.data.stations[breweryID])
+            console.log(citibike.data.stations[homeID]);
+            console.log(citibike.data.stations[breweryID]);
 
 
             if(citibike.data.stations[homeID].station_id !== "3486") {
