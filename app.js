@@ -1,50 +1,24 @@
 $(document).ready(function() { 
 
     function getData() {
+
+        const homeID = 638;
+        const breweryID = 596;
    
-   
-       let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
-   
-       $.getJSON(api, function(citibike) {
-           
-           //-----------Current Time
-   
-           let date = new Date();
-           let humanTimeNow = date.toLocaleTimeString();
+       let apiStationStatus- = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
+
+       $.getJSON(apiStationStatus, function(citibike) {
    
            //------------HOME
-           console.log(citibike.data.stations[597].station_id)
+           let bikesHome = citibike.data.stations[homeID].num_bikes_available;
+           let docksHome = citibike.data.stations[homeID].num_docks_available;
            
-           let lastReportedUnixHome = citibike.data.stations[638].last_reported;
-           let lastReportedDateHome = new Date(lastReportedUnixHome * 1000);
-           let lastReportedHourHome = lastReportedDateHome.getHours();
-           let lastReportedHourHomeMilitaryTime = lastReportedDateHome.getHours();
-           let lastReportedMinutesHome = lastReportedDateHome.getMinutes();
-           let lastReportedSecHome = lastReportedDateHome.getSeconds();
-   
-           if(lastReportedHourHome > 12) {
-               lastReportedHourHome = lastReportedHourHome - 12;
-           }
-   
-           if(lastReportedMinutesHome < 10) {
-               lastReportedMinutesHome = "0" + lastReportedMinutesHome.toString();
-           }
-           if(lastReportedSecHome < 10) {
-               lastReportedSecHome = "0" + lastReportedSecHome.toString();
-           }
-   
-           let bikesHome = citibike.data.stations[638].num_bikes_available;
-           let docksHome = citibike.data.stations[638].num_docks_available;
-   
-           
-           if(lastReportedHourHomeMilitaryTime >= 12 && lastReportedHourHomeMilitaryTime < 24) {
-               $("#last-updated-home").html(`Last bike change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} PM`);
-           } else if(lastReportedHourHomeMilitaryTime < 12 || lastReportedHourHomeMilitaryTime === 24) {
-               $("#last-updated-home").html(`Last bike change: ${lastReportedHourHome}:${lastReportedMinutesHome}:${lastReportedSecHome} AM`);
-           }
-       
-           $("#bikes-home").html(bikesHome + " bikes");
-           $("#docks-home").html(docksHome + " docks");
+            if(citibike.data.stations[homeID].station_id !== 3486) {
+                $("#bikes-home").html("error");
+            } else {
+                $("#bikes-home").html(bikesHome + " bikes");
+                $("#docks-home").html(docksHome + " docks");
+            }
            
            //Warning colors
            if(bikesHome < 4) {
@@ -57,39 +31,18 @@ $(document).ready(function() {
            } else if(docksHome < 7) {
                $("#docks-home").css("color", "orange");
            } 
-           //----------------BREWERY 
-   
-           let breweryID = citibike.data.stations[596].station_id;
-           let lastReportedUnixBrewery = citibike.data.stations[596].last_reported;
-           let lastReportedDateBrewery = new Date(lastReportedUnixBrewery * 1000);
-           let lastReportedHourBrewery = lastReportedDateBrewery.getHours();
-           let lastReportedHourBreweryMilitaryTime = lastReportedDateBrewery.getHours();
-           let lastReportedMinutesBrewery = lastReportedDateBrewery.getMinutes();
-           let lastReportedSecBrewery = lastReportedDateBrewery.getSeconds();
-   
-           if(lastReportedHourBrewery > 12) {
-               lastReportedHourBrewery = lastReportedHourBrewery - 12;
-           }
-   
-           if(lastReportedMinutesBrewery < 10) {
-               lastReportedMinutesBrewery = "0" + lastReportedMinutesBrewery.toString();
-           }
-           if(lastReportedSecBrewery < 10) {
-               lastReportedSecBrewery = "0" + lastReportedSecBrewery.toString();
-           }
-   
-           let bikesBrewery = citibike.data.stations[596].num_bikes_available;
-           let docksBrewery = citibike.data.stations[596].num_docks_available;
-   
-           if(lastReportedHourBreweryMilitaryTime >= 12 && lastReportedHourBreweryMilitaryTime < 24) {
-               $("#last-updated-brewery").html(`Last bike change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} PM`);
-           } else if(lastReportedHourBreweryMilitaryTime < 12 || lastReportedHourBreweryMilitaryTime === 24) {
-               $("#last-updated-brewery").html(`Last bike change: ${lastReportedHourBrewery}:${lastReportedMinutesBrewery}:${lastReportedSecBrewery} AM`);
-           }
+
+           //--------------BREWERY 
+           let bikesBrewery = citibike.data.stations[breweryID].num_bikes_available;
+           let docksBrewery = citibike.data.stations[breweryID].num_docks_available;
            
-           $("#bikes-brewery").html(bikesBrewery + " bikes");
-           $("#docks-brewery").html(docksBrewery + " docks");
-           
+           if(citibike.data.stations[breweryID].station_id !== 3419) {
+            $("#bikes-brewery").html("error");
+        } else {
+            $("#bikes-brewery").html(bikesBrewery + " bikes");
+            $("#docks-brewery").html(docksBrewery + " docks");
+        }
+
            //Warning colors
            if(bikesBrewery < 4) {
                $("#bikes-brewery").css("color", "red");
@@ -101,13 +54,16 @@ $(document).ready(function() {
            } else if(docksBrewery < 7) {
                $("#docks-brewery").css("color", "orange");
            } 
-   
-   
-           $("#last-checked-time").html(` last update: ${humanTimeNow}`);
-   
-   
-           setTimeout(getData, 30000);
        })    
+
+        // get last-updated time
+        let date = new Date();
+        let humanTimeNow = date.toLocaleTimeString();
+        $("#last-checked-time").html(` last update: ${humanTimeNow}`);
+
+        //refresh every n seconds
+        setTimeout(getData, 30000);
     }
+
     getData(); 
-   });
+});
