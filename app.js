@@ -36,12 +36,12 @@ $(document).ready(function() {
            let bikesBrewery = citibike.data.stations[breweryID].num_bikes_available;
            let docksBrewery = citibike.data.stations[breweryID].num_docks_available;
            
-           if(citibike.data.stations[breweryID].station_id !== 3419) {
-            $("#bikes-brewery").html("error");
-        } else {
-            $("#bikes-brewery").html(bikesBrewery + " bikes");
-            $("#docks-brewery").html(docksBrewery + " docks");
-        }
+            if(citibike.data.stations[breweryID].station_id !== 3419) {
+                $("#bikes-brewery").html("error");
+            } else {
+                $("#bikes-brewery").html(bikesBrewery + " bikes");
+                $("#docks-brewery").html(docksBrewery + " docks");
+            }
 
            //Warning colors
            if(bikesBrewery < 4) {
