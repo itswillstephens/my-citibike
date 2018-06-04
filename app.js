@@ -11,16 +11,15 @@ $(document).ready(function() {
             const homeID = homeArrayPosition;
             const breweryID = 596;
         
-           //grab station ids
-           let stationObj = citibike.data.stations;
-           console.log(stationObj);
-           for(let i = 0; i < stationObj.length; i++) {
-                if(stationObj[i] === 3486) {
-                    homeArrayPosition = i;
-                    break;
-                }
+            //grab station ids
+            let stationObj = citibike.data.stations;
+            console.log(stationObj[1]);
+            for(let i = 0; i < stationObj.length; i++) {
+                    if(stationObj[i] === 3486) {
+                        homeArrayPosition = i;
+                        break;
+                    }
             }
-            console.log('hello')
         
            //------------HOME
            let bikesHome = citibike.data.stations[homeID].num_bikes_available;
