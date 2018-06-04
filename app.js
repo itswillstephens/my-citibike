@@ -6,6 +6,9 @@ $(document).ready(function() {
 
        $.getJSON(api, function(citibike) {
         
+            let homeArrayPosition = 0;
+            let breweryArrayPosition = 0;
+
             //grab station ids
             let stationObj = citibike.data.stations;
 
