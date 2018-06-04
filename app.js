@@ -19,7 +19,7 @@ $(document).ready(function() {
                     break;
                 }
             }
-        
+            console.log('hello')
         
            //------------HOME
            let bikesHome = citibike.data.stations[homeID].num_bikes_available;
