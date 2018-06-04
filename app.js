@@ -13,7 +13,7 @@ $(document).ready(function() {
             let stationObj = citibike.data.stations;
 
             for(let i = 0; i < stationObj.length; i++) {
-                if(stationObj[i].station_id == "3486") {
+                if(stationObj[i].station_id = "3486") {
                     homeArrayPosition = i;
                     break;
                 }
