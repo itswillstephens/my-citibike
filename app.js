@@ -9,7 +9,7 @@ $(document).ready(function() {
             let homeArrayPosition = 0;
             let breweryArrayPosition = 0;
 
-            //grab station ids
+            //grab station id array positions
             let stationObj = citibike.data.stations;
 
             for(let i = 0; i < stationObj.length; i++) {
@@ -27,9 +27,6 @@ $(document).ready(function() {
             }
 
            //------------HOME
-           console.log(homeArrayPosition);
-           console.log(breweryArrayPosition);
-
            let bikesHome = citibike.data.stations[homeArrayPosition].num_bikes_available;
            let docksHome = citibike.data.stations[homeArrayPosition].num_docks_available;
 
