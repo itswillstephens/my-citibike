@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 
     function getData() {
-
+        let homeArrayPosition;
         const homeID = homeArrayPosition;
         const breweryID = 596;
    
@@ -13,7 +13,7 @@ $(document).ready(function() {
            let stationObj = citibike.data.stations;
            for(let i = 0; i < stationObj.length; i++) {
                 if(stationObj[i] === 3486) {
-                    i = homeArrayPosition;
+                    homeArrayPosition = i;
                 }
             }
         
