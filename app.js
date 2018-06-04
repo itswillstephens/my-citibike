@@ -14,7 +14,9 @@ $(document).ready(function() {
            for(let i = 0; i < stationObj.length; i++) {
                 if(stationObj[i] === 3486) {
                     homeArrayPosition = i;
+                    break;
                 }
+                console.log(homeArrayPosition);
             }
         
         
