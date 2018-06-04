@@ -8,28 +8,22 @@ $(document).ready(function() {
    
 
             let homeArrayPosition;
-            const homeID = homeArrayPosition;
             const breweryID = 596;
         
             //grab station ids
             let stationObj = citibike.data.stations;
-            console.log(stationObj[1]);
             for(let i = 0; i < stationObj.length; i++) {
-                    if(stationObj[i] === 3486) {
+                    if(stationObj[i].station_id === 3486) {
                         homeArrayPosition = i;
                         break;
                     }
             }
         
            //------------HOME
-           let bikesHome = citibike.data.stations[homeID].num_bikes_available;
-           let docksHome = citibike.data.stations[homeID].num_docks_available;
-           
-            console.log(citibike.data.stations[homeID]);
-            console.log(citibike.data.stations[breweryID]);
+           let bikesHome = citibike.data.stations[homeArrayPosition].num_bikes_available;
+           let docksHome = citibike.data.stations[homeArrayPosition].num_docks_available;
 
-
-            if(citibike.data.stations[homeID].station_id !== "3486") {
+            if(citibike.data.stations[homeArrayPosition].station_id !== "3486") {
                 $("#bikes-home").html("error");
             } else {
                 $("#bikes-home").html(bikesHome + " bikes");
