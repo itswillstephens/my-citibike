@@ -11,21 +11,22 @@ $(document).ready(function() {
 
             for(let i = 0; i < stationObj.length; i++) {
                 if(stationObj[i].station_id === 3486) {
-                    var homeArrayPosition = i;
-                    console.log(stationObj[i].station_id);
+                    homeArrayPosition = i;
                     break;
                 }
             }
 
             for(let j = 0; j < stationObj.length; j++) {
                 if(stationObj[j].station_id === 3419) {
-                    var breweryArrayPosition = j;
-                    console.log(stationObj[j].station_id);
+                    breweryArrayPosition = j;
                     break;
                 }
             }
 
            //------------HOME
+           console.log(homeArrayPosition);
+           console.log(breweryArrayPosition);
+
            let bikesHome = citibike.data.stations[homeArrayPosition].num_bikes_available;
            let docksHome = citibike.data.stations[homeArrayPosition].num_docks_available;
 
