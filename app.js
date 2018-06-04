@@ -13,6 +13,7 @@ $(document).ready(function() {
         
            //grab station ids
            let stationObj = citibike.data.stations;
+           console.log(stationObj);
            for(let i = 0; i < stationObj.length; i++) {
                 if(stationObj[i] === 3486) {
                     homeArrayPosition = i;
