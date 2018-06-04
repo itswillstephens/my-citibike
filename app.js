@@ -10,16 +10,12 @@ $(document).ready(function() {
        $.getJSON(api, function(citibike) {
    
            //grab station ids
-
-           const homeArrayPosition = function() {
-               let stationObj = citibike.data.stations;
-
-                for(let i = 0; i < stationObj.length; i++) {
-                    if(stationObj[i] === 3486) {
-                        return i;
-                    }
+           let stationObj = citibike.data.stations;
+           for(let i = 0; i < stationObj.length; i++) {
+                if(stationObj[i] === 3486) {
+                    i = homeArrayPosition;
                 }
-           }
+            }
         
         
            //------------HOME
