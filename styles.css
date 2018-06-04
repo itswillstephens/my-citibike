@@ -21,7 +21,7 @@ html, body {
     max-width: 400px;
     height: auto;
     padding: 10px;
-    margin: 30px auto;
+    margin: 20px auto;
     background-color: #052b6c;
     line-height: 1;
 }
@@ -35,14 +35,6 @@ html, body {
 #bikes-home, #docks-home, #bikes-brewery, #docks-brewery  {
     font-size: 2em;
     background-color: #052b6c;
-}
-
-#last-updated-home, #last-updated-brewery {
-    font-size: .8em;
-    font-family: 'Roboto', sans-serif;
-    margin-top: 15px;
-    background-color: #052b6c;
-    color: #0098e4
 }
 
 #last-checked-time {
