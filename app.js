@@ -13,14 +13,14 @@ $(document).ready(function() {
             let stationObj = citibike.data.stations;
 
             for(let i = 0; i < stationObj.length; i++) {
-                if(stationObj[i].station_id = 3486) {
+                if(stationObj[i].station_id ==== "3486") {
                     homeArrayPosition = i;
                     break;
                 }
             }
 
             for(let j = 0; j < stationObj.length; j++) {
-                if(stationObj[j].station_id = 3419) {
+                if(stationObj[j].station_id === "3419") {
                     breweryArrayPosition = j;
                     break;
                 }
