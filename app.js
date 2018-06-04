@@ -5,19 +5,15 @@ $(document).ready(function() {
        let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
        $.getJSON(api, function(citibike) {
-   
-
-            let homeArrayPosition;
-            let breweryArrayPosition;
-            const breweryID = 596;
         
             //grab station ids
             let stationObj = citibike.data.stations;
+
             for(let i = 0; i < stationObj.length; i++) {
-                    if(stationObj[i].station_id === 3486) {
-                        homeArrayPosition = i;
-                        break;
-                    }
+                if(stationObj[i].station_id === 3486) {
+                    homeArrayPosition = i;
+                    break;
+                }
             }
 
             for(let j = 0; j < stationObj.length; j++) {
@@ -27,7 +23,6 @@ $(document).ready(function() {
                 }
             }
 
-        
            //------------HOME
            let bikesHome = citibike.data.stations[homeArrayPosition].num_bikes_available;
            let docksHome = citibike.data.stations[homeArrayPosition].num_docks_available;
