@@ -2,13 +2,26 @@ $(document).ready(function() {
 
     function getData() {
 
-        const homeID = 638;
+        const homeID = homeArrayPosition;
         const breweryID = 596;
    
        let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
        $.getJSON(api, function(citibike) {
    
+           //grab station ids
+
+           const homeArrayPosition = function() {
+               let stationObj = citibike.data.stations;
+
+                for(let i = 0; i < stationObj.length; i++) {
+                    if(stationObj[i] === 3486) {
+                        return i;
+                    }
+                }
+           }
+        
+        
            //------------HOME
            let bikesHome = citibike.data.stations[homeID].num_bikes_available;
            let docksHome = citibike.data.stations[homeID].num_docks_available;
