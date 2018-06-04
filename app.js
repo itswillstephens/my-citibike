@@ -8,6 +8,7 @@ $(document).ready(function() {
    
 
             let homeArrayPosition;
+            let breweryArrayPosition;
             const breweryID = 596;
         
             //grab station ids
@@ -18,6 +19,14 @@ $(document).ready(function() {
                         break;
                     }
             }
+
+            for(let j = 0; j < stationObj.length; j++) {
+                if(stationObj[j].station_id === 3419) {
+                    breweryArrayPosition = j;
+                    break;
+                }
+            }
+
         
            //------------HOME
            let bikesHome = citibike.data.stations[homeArrayPosition].num_bikes_available;
@@ -43,10 +52,10 @@ $(document).ready(function() {
            } 
 
            //--------------BREWERY 
-           let bikesBrewery = citibike.data.stations[breweryID].num_bikes_available;
-           let docksBrewery = citibike.data.stations[breweryID].num_docks_available;
+           let bikesBrewery = citibike.data.stations[breweryArrayPosition].num_bikes_available;
+           let docksBrewery = citibike.data.stations[breweryArrayPosition].num_docks_available;
            
-            if(citibike.data.stations[breweryID].station_id !== "3419") {
+            if(citibike.data.stations[breweryArrayPosition].station_id !== "3419") {
                 $("#bikes-brewery").html("error");
             } else {
                 $("#bikes-brewery").html(bikesBrewery + " bikes");
