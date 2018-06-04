@@ -12,6 +12,7 @@ $(document).ready(function() {
             for(let i = 0; i < stationObj.length; i++) {
                 if(stationObj[i].station_id === 3486) {
                     homeArrayPosition = i;
+                    console.log(stationObj[i].station_id)
                     break;
                 }
             }
@@ -19,6 +20,7 @@ $(document).ready(function() {
             for(let j = 0; j < stationObj.length; j++) {
                 if(stationObj[j].station_id === 3419) {
                     breweryArrayPosition = j;
+                    console.log(stationObj[j].station_id)
                     break;
                 }
             }
