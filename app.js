@@ -1,14 +1,16 @@
 $(document).ready(function() { 
 
     function getData() {
-        let homeArrayPosition;
-        const homeID = homeArrayPosition;
-        const breweryID = 596;
    
        let api = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json";
 
        $.getJSON(api, function(citibike) {
    
+
+            let homeArrayPosition;
+            const homeID = homeArrayPosition;
+            const breweryID = 596;
+        
            //grab station ids
            let stationObj = citibike.data.stations;
            for(let i = 0; i < stationObj.length; i++) {
@@ -16,7 +18,6 @@ $(document).ready(function() {
                     homeArrayPosition = i;
                     break;
                 }
-                console.log(homeArrayPosition);
             }
         
         
